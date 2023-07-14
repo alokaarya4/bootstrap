@@ -18,6 +18,17 @@
                 background-position: center;
                 padding: 100px 0;
             }
+
+            .card{
+
+                transform-style: preserve-3d;
+                transform: perspective(1000px);
+            }
+
+            .card-body{
+
+                transform: translateZ(60px);
+            }
         </style>
             
             
@@ -25,9 +36,9 @@
 <body>
     <header>
         <div class="container text-center">
-            <p class="display-4 text-white fw-bold">Black Friday Sale</p>
-            <input type="text" class="form-control w-75 mx-auto">
-            <button class="btn btn-warning mt-5"> <i class="fa-solid fa-magnifying-glass"></i></button>
+            <p class="display-4 text-white fw-bold class mytitle">Black Friday Sale</p>
+            <input type="text" class="form-control w-75 mx-auto myinput">
+            <button class="btn btn-warning mt-5"> Search<i class="fa-solid fa-magnifying-glass mybtn"></i></button>
         </div>
     </header>
 
@@ -35,9 +46,11 @@
         <div class="row">
             <div class="col-md-3 mt-4">
                 <div class="card shadow">
-                    <img class="img-fluid"
+                    <!-- width and height set  -->
+                    <div style="height: 250px; overflow: hidden;">
+                    <img class="h-100 m-auto d-block"
                         src=https://i5.walmartimages.com/asr/f90eedf4-98e8-4d6b-9f54-76899266266c.389572d0d96412a23c57024a7f9ed065.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF>
-
+                    </div>
                     <div class="card-body">
                         <h4 class="text-muted">Sony</h4>
                         <h3>Wireless Headphones</h3>
@@ -116,6 +129,48 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <script>
+
+            ScrollReveal().reveal('.mytitle'),{
+                delay: 500,
+                origin: 'left',
+                distance: '100px',
+                opacity: 0,
+
+            });
+            ScrollReveal().reveal('.myinput'),{
+                delay: 500,
+                origin: 'right',
+                distance: '100px',
+                opacity: 0,
+
+            });
+            ScrollReveal().reveal('.mybtn',{
+                delay: 500,
+                origin: 'left',
+                distance: '100px',
+                opacity: 0,
+
+            });
+
+
+        </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js" integrity="sha512-RX/OFugt/bkgwRQg4B22KYE79dQhwaPp2IZaA/YyU3GMo/qY7GrXkiG6Dvvwnds6/DefCfwPTgCXnaC6nAgVYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script>
+           VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 25,
+            speed: 500,
+            glare: true
+
+           });
+
+</script>
 </body>
 
 </html>
